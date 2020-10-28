@@ -26,9 +26,9 @@ public class App {
 
     public void start() {
         System.out.println("ArrayList Samples");
-        demoArrayListOfString();
-        demoPrimitiveTypeWrapping();
-        //demoArrayListGrowth();
+        //demoArrayListOfString();
+        //demoPrimitiveTypeWrapping();
+        demoArrayListGrowth();
     }
 
     private void demoArrayListOfString() {
@@ -171,13 +171,8 @@ public class App {
         // TODO Convert to method findLargest() - return largest value.  Change to use enhanced FOR
 
         // Find the largest value
-        double largest = values.get(0);  // set initial current largest
-        for (int i = 1; i < values.size(); i++) {
-            if (values.get(i) > largest) {
-                largest = values.get(i);
-            }
-        }
-        System.out.println("Largest: " + largest);
+        double largest = findLargest(values);
+        System.out.println("Largest using method: " + largest);
 
         // Print all values, marking the largest
         for (double element : values)    // enhanced for loop (or "for each" loop)
@@ -214,9 +209,15 @@ public class App {
     // a reference to the ArrayList is passed.  The parameter
     // variable will have read and modify access to the original ArrayList.
     //TODO - finish this method and test it.
-    //
-    //    public static double findLargest(ArrayList<Double> values)
-    //    {
-    //        return 0;
-    //    }
+
+        public static double findLargest(ArrayList<Double> values)
+        {
+            double largest = values.get(0);  // set initial current largest
+            for (int i = 1; i < values.size(); i++) {
+                if (values.get(i) > largest) {
+                    largest = values.get(i);
+                }
+            }
+            return largest;
+        }
 }
